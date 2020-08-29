@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SupProdVO"
+  Version="11.1.2.64.36"
+  SelectList="SupProdEO.SUP_ID, 
+       SupProdEO.PROD_ID, 
+       SupProdEO.ROWID"
+  FromList="SUP_PROD SupProdEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="SupVO1"
+    ViewObjectName="model.ViewObjects.SupVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProdVO1"
+    ViewObjectName="model.ViewObjects.ProdVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SupId"
+    ListVOName="SupVO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SupName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ProdId"
+    ListVOName="ProdVO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProdId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProdId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ProdName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SupProdEO"
+    Entity="model.EntityObjects.SupProdEO"/>
+  <ViewAttribute
+    Name="SupId"
+    PrecisionRule="true"
+    EntityAttrName="SupId"
+    EntityUsage="SupProdEO"
+    AliasName="SUP_ID"
+    LOVName="LOV_SupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProdId"
+    PrecisionRule="true"
+    EntityAttrName="ProdId"
+    EntityUsage="SupProdEO"
+    AliasName="PROD_ID"
+    LOVName="LOV_ProdId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Rowid"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="Rowid"
+    EntityUsage="SupProdEO"
+    AliasName="ROWID"/>
+</ViewObject>

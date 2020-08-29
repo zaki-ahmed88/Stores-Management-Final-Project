@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="AdminT">
+    <default-activity>admin</default-activity>
+    <view id="admin">
+      <page>/admin.jsf</page>
+    </view>
+    <view id="ProductCategories">
+      <page>/ProductCategories.jsf</page>
+    </view>
+    <view id="Products">
+      <page>/Products.jsf</page>
+    </view>
+    <view id="Suppliers">
+      <page>/Suppliers.jsf</page>
+    </view>
+    <view id="login">
+      <page>/login.jsf</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>suppliers</from-outcome>
+        <to-activity-id>Suppliers</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>productCategories</from-outcome>
+        <to-activity-id>ProductCategories</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>admin</from-outcome>
+        <to-activity-id>admin</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>products</from-outcome>
+        <to-activity-id>Products</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>adminBackToLogin</from-outcome>
+        <to-activity-id>login</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>suppliers</from-outcome>
+        <to-activity-id>Suppliers</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>adminBackToLogin</from-outcome>
+        <to-activity-id>login</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>admin</from-outcome>
+        <to-activity-id>admin</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome>Product Categories</from-outcome>
+        <to-activity-id>ProductCategories</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome>products</from-outcome>
+        <to-activity-id>Products</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

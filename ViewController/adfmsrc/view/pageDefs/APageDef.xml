@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="APageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Sup1" RangeSize="25" DataControl="AppModuleAPPDataControl" id="Sup1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="Sup1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Sup1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sup1Iterator" id="Sup1">
+      <nodeDefinition DefName="model.ViewObjects.SupVO" Name="Sup10">
+        <AttrNames>
+          <Item Value="SupId"/>
+          <Item Value="SupName"/>
+          <Item Value="ContactPesonName"/>
+          <Item Value="Balance"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Sup1Iterator" id="SupId">
+      <AttrNames>
+        <Item Value="SupId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sup1Iterator" id="SupName">
+      <AttrNames>
+        <Item Value="SupName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sup1Iterator" id="ContactPesonName">
+      <AttrNames>
+        <Item Value="ContactPesonName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sup1Iterator" id="Balance">
+      <AttrNames>
+        <Item Value="Balance"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Sup1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Sup1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Sup1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Sup1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="Sup1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="Sup1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAPPDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="AppModuleAPPDataControl"/>
+  </bindings>
+</pageDefinition>

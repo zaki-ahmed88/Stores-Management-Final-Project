@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustinvoicesprodCustinvoiceVL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.Associations.CustinvoicesprodCustinvoiceAS">
+  <ViewLinkDefEnd
+    Name="CustInvoices"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ViewObjects.CustInvoicesVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CustInvoices"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObjects.CustInvoicesVO.CustInvoiceId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="CustInvoicesProd"
+    Cardinality="-1"
+    Owner="model.ViewObjects.CustInvoicesProdVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="CustInvoicesProd"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObjects.CustInvoicesProdVO.CustInvoiceId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProdVO"
+  Version="11.1.2.64.36"
+  SelectList="ProdEO.PROD_ID, 
+       ProdEO.PROD_NAME, 
+       ProdEO.QUANTITY, 
+       ProdEO.PROD_CAT_ID, 
+       ProdEO.PRICE"
+  FromList="PROD ProdEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="ProdCatVO1"
+    ViewObjectName="model.ViewObjects.ProdCatVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ProdCatId"
+    ListVOName="ProdCatVO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProdCatId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ProdCatId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ProdCatName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ProdEO"
+    Entity="model.EntityObjects.ProdEO"/>
+  <ViewAttribute
+    Name="ProdId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProdId"
+    EntityUsage="ProdEO"
+    AliasName="PROD_ID"/>
+  <ViewAttribute
+    Name="ProdName"
+    PrecisionRule="true"
+    EntityAttrName="ProdName"
+    EntityUsage="ProdEO"
+    AliasName="PROD_NAME"/>
+  <ViewAttribute
+    Name="Quantity"
+    PrecisionRule="true"
+    EntityAttrName="Quantity"
+    EntityUsage="ProdEO"
+    AliasName="QUANTITY"
+    DefaultValue="0"/>
+  <ViewAttribute
+    Name="ProdCatId"
+    PrecisionRule="true"
+    EntityAttrName="ProdCatId"
+    EntityUsage="ProdEO"
+    AliasName="PROD_CAT_ID"
+    LOVName="LOV_ProdCatId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Price"
+    PrecisionRule="true"
+    EntityAttrName="Price"
+    EntityUsage="ProdEO"
+    AliasName="PRICE"/>
+  <ViewLinkAccessor
+    Name="CustInvoicesProd"
+    ViewLink="model.ViewLinks.CustinvoicesprodProdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustProd"
+    ViewLink="model.ViewLinks.CustprodProdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SupInvoicesProd"
+    ViewLink="model.ViewLinks.SupinvoicesprodProdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SupProd"
+    ViewLink="model.ViewLinks.SupprodProdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SupMailsVO"
+  Version="11.1.2.64.36"
+  SelectList="SupMailsEO.SUP_MAILS_ID, 
+       SupMailsEO.SUP_MAILS, 
+       SupMailsEO.SUP_ID"
+  FromList="SUP_MAILS SupMailsEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="SupVO1"
+    ViewObjectName="model.ViewObjects.SupVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SupId"
+    ListVOName="SupVO1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SupName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SupMailsEO"
+    Entity="model.EntityObjects.SupMailsEO"/>
+  <ViewAttribute
+    Name="SupMailsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupMailsId"
+    EntityUsage="SupMailsEO"
+    AliasName="SUP_MAILS_ID"/>
+  <ViewAttribute
+    Name="SupMails"
+    PrecisionRule="true"
+    EntityAttrName="SupMails"
+    EntityUsage="SupMailsEO"
+    AliasName="SUP_MAILS"/>
+  <ViewAttribute
+    Name="SupId"
+    PrecisionRule="true"
+    EntityAttrName="SupId"
+    EntityUsage="SupMailsEO"
+    AliasName="SUP_ID"
+    LOVName="LOV_SupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

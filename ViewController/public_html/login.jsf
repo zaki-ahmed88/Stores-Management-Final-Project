@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="login.jsf" id="d1" binding="#{backingBeanScope.backing_login.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_login.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1" binding="#{backingBeanScope.backing_login.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_login.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl4"
+                                                 binding="#{backingBeanScope.backing_login.pgl4}">
+                                <af:commandButton text="Home" id="cb4"
+                                                  binding="#{backingBeanScope.backing_login.cb4}" action="home"/>
+                                <af:commandButton text="About" id="cb5"
+                                                  binding="#{backingBeanScope.backing_login.cb5}" action="about"/>
+                                <af:commandButton text="Contact" id="cb6"
+                                                  binding="#{backingBeanScope.backing_login.cb6}" action="contact"/>
+                                <af:commandButton text="Login" id="cb7"
+                                                  binding="#{backingBeanScope.backing_login.cb7}" action="login"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_login.pgl1}">
+                                <af:outputText value="Login Page" id="ot1"
+                                               binding="#{backingBeanScope.backing_login.ot1}"
+                                               inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                                <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_login.pfl1}">
+                                    <f:facet name="footer"/>
+                                    <af:inputText label="Mail" id="it1"
+                                                  binding="#{backingBeanScope.backing_login.it1}"/>
+                                    <af:inputText label="Password" id="it2"
+                                                  binding="#{backingBeanScope.backing_login.it2}"/>
+                                    <af:panelGroupLayout id="pgl2" binding="#{backingBeanScope.backing_login.pgl2}"
+                                                         layout="horizontal">
+                                        <af:commandButton text="Login" id="cb1"
+                                                          binding="#{backingBeanScope.backing_login.cb1}"/>
+                                        <af:spacer width="10" height="10" id="s1"
+                                                   binding="#{backingBeanScope.backing_login.s1}"/>
+                                        <af:outputText value="Invalid Login" id="ot2"
+                                                       binding="#{backingBeanScope.backing_login.ot2}"
+                                                       inlineStyle="color:Red; font-size:15px;" visible="false"/>
+                                    </af:panelGroupLayout>
+                                </af:panelFormLayout>
+                                <af:spacer width="10" height="10" id="s2"
+                                           binding="#{backingBeanScope.backing_login.s2}"/>
+                                <af:panelGroupLayout id="pgl3" binding="#{backingBeanScope.backing_login.pgl3}">
+                                    <af:commandButton text="Admin" id="cb2"
+                                                      binding="#{backingBeanScope.backing_login.cb2}"
+                                                      action="adminModule"/>
+                                    <af:commandButton text="Customers" id="cb3"
+                                                      binding="#{backingBeanScope.backing_login.cb3}"
+                                                      action="customersModule"/>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_login-->
+</f:view>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="ProductCategoriesPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProdCat1" RangeSize="25" DataControl="AppModuleAPPDataControl" id="ProdCat1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="ProdCat1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ProdCat1Query"/>
+    <iterator Binds="Prod1" RangeSize="25" DataControl="AppModuleAPPDataControl" id="Prod1Iterator"
+              ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="Prod1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Prod1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ProdCat1Iterator" id="ProdCat1">
+      <nodeDefinition DefName="model.ViewObjects.ProdCatVO" Name="ProdCat10">
+        <AttrNames>
+          <Item Value="ProdCatId"/>
+          <Item Value="ProdCatName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ProdCat1Iterator" id="ProdCatId">
+      <AttrNames>
+        <Item Value="ProdCatId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProdCat1Iterator" id="ProdCatName">
+      <AttrNames>
+        <Item Value="ProdCatName"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProdCat1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProdCat1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProdCat1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProdCat1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="Prod1Iterator" id="Prod1">
+      <nodeDefinition DefName="model.ViewObjects.ProdVO" Name="Prod10">
+        <AttrNames>
+          <Item Value="ProdId"/>
+          <Item Value="ProdName"/>
+          <Item Value="Quantity"/>
+          <Item Value="ProdCatId"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Prod1Iterator" id="ProdId">
+      <AttrNames>
+        <Item Value="ProdId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Prod1Iterator" id="ProdName">
+      <AttrNames>
+        <Item Value="ProdName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Prod1Iterator" id="Quantity">
+      <AttrNames>
+        <Item Value="Quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false" IterBinding="Prod1Iterator" Uses="LOV_ProdCatId" id="ProdCatId1"/>
+    <attributeValues IterBinding="Prod1Iterator" id="Price">
+      <AttrNames>
+        <Item Value="Price"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Prod1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="Prod1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="Prod1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="Prod1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="Prod1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="Prod1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleAPPDataControl"/>
+    <action IterBinding="ProdCat1Iterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ProdCat1Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="AppModuleAPPDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SupmailsSupVL"
+  Version="11.1.2.64.36"
+  EntityAssociation="model.Associations.SupmailsSupAS">
+  <ViewLinkDefEnd
+    Name="Sup"
+    Cardinality="1"
+    Source="true"
+    Owner="model.ViewObjects.SupVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Sup"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObjects.SupVO.SupId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SupMails"
+    Cardinality="-1"
+    Owner="model.ViewObjects.SupMailsVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SupMails"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.ViewObjects.SupMailsVO.SupId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

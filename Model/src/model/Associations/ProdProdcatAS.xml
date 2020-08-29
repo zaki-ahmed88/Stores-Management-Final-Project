@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProdProdcatAS"
+  Version="11.1.2.64.36">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="ProdCat"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EntityObjects.ProdCatEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="ProdCat"/>
+      <Attr Name="_foreignKey" Value="model.EntityObjects.ProdCatEO.ProdCatPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObjects.ProdCatEO.ProdCatId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Prod"
+    Cardinality="-1"
+    Owner="model.EntityObjects.ProdEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Prod"/>
+      <Attr Name="_foreignKey" Value="model.EntityObjects.ProdEO.ProdProdcat"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObjects.ProdEO.ProdCatId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

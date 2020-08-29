@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="login">
+    <page>/login.jsf</page>
+  </view>
+  <view id="home">
+    <page>/home.jsf</page>
+  </view>
+  <view id="Contact">
+    <page>/Contact.jsf</page>
+  </view>
+  <view id="About">
+    <page>/About.jsf</page>
+  </view>
+  <task-flow-call id="customers">
+    <task-flow-reference>
+      <document>/WEB-INF/customers.xml</document>
+      <id>customers</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <task-flow-call id="AdminT">
+    <task-flow-reference>
+      <document>/WEB-INF/AdminT.F.xml</document>
+      <id>AdminT</id>
+    </task-flow-reference>
+  </task-flow-call>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>login</from-outcome>
+      <to-activity-id>login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>about</from-outcome>
+      <to-activity-id>About</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>home</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>contact</from-outcome>
+      <to-activity-id>Contact</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>adminModule</from-outcome>
+      <to-activity-id>AdminT</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>customersModule</from-outcome>
+      <to-activity-id>customers</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CustVO"
+  Version="11.1.2.64.36"
+  SelectList="CustEO.CUST_ID, 
+       CustEO.CUST_NAME, 
+       CustEO.CONTACT_PESON_NAME, 
+       CustEO.BALANCE"
+  FromList="CUST CustEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="CustEO"
+    Entity="model.EntityObjects.CustEO"/>
+  <ViewAttribute
+    Name="CustId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CustId"
+    EntityUsage="CustEO"
+    AliasName="CUST_ID"/>
+  <ViewAttribute
+    Name="CustName"
+    PrecisionRule="true"
+    EntityAttrName="CustName"
+    EntityUsage="CustEO"
+    AliasName="CUST_NAME"/>
+  <ViewAttribute
+    Name="ContactPesonName"
+    PrecisionRule="true"
+    EntityAttrName="ContactPesonName"
+    EntityUsage="CustEO"
+    AliasName="CONTACT_PESON_NAME"/>
+  <ViewAttribute
+    Name="Balance"
+    PrecisionRule="true"
+    EntityAttrName="Balance"
+    EntityUsage="CustEO"
+    AliasName="BALANCE"
+    DefaultValue="0"/>
+  <ViewLinkAccessor
+    Name="CustInvoices"
+    ViewLink="model.ViewLinks.CustinvoicesCustVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustMails"
+    ViewLink="model.ViewLinks.CustmailsCustVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustPayments"
+    ViewLink="model.ViewLinks.CustpaymentsCustVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustPhones"
+    ViewLink="model.ViewLinks.CustphonesCustVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CustProd"
+    ViewLink="model.ViewLinks.CustprodCustVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

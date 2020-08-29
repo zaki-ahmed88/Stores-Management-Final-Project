@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="admin.jsf" id="d1" binding="#{backingBeanScope.backing_admin.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_admin.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1" binding="#{backingBeanScope.backing_admin.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_admin.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_admin.pgl1}">
+                                <af:commandButton text="Back To Login Page" id="cb1"
+                                                  binding="#{backingBeanScope.backing_admin.cb1}"
+                                                  action="adminBackToLogin"/>
+                                <af:commandButton text="Admin" id="cb2"
+                                                  binding="#{backingBeanScope.backing_admin.cb2}" action="admin"/>
+                                <af:commandButton text="Suppliers" id="cb3"
+                                                  binding="#{backingBeanScope.backing_admin.cb3}" action="suppliers"/>
+                                <af:commandButton text="Product Categories" id="cb4"
+                                                  binding="#{backingBeanScope.backing_admin.cb4}"
+                                                  action="productCategories"/>
+                                <af:commandButton text="Products" id="cb5"
+                                                  binding="#{backingBeanScope.backing_admin.cb5}" action="products"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:outputText value="Admin Page" id="ot1"
+                                           binding="#{backingBeanScope.backing_admin.ot1}"
+                                           inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_admin-->
+</f:view>

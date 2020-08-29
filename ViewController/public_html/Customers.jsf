@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Customers.jsf" id="d1" binding="#{backingBeanScope.backing_Customers.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_Customers.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1" binding="#{backingBeanScope.backing_Customers.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_Customers.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_Customers.pgl1}">
+                                <af:commandButton text="Back To Login Page" id="cb1"
+                                                  binding="#{backingBeanScope.backing_Customers.cb1}"
+                                                  action="customersBackToLogin"/>
+                                <af:commandButton text="Refresh" id="cb2"
+                                                  binding="#{backingBeanScope.backing_Customers.cb2}"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:outputText value="Customers Page" id="ot1"
+                                           binding="#{backingBeanScope.backing_Customers.ot1}"
+                                           inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Customers-->
+</f:view>

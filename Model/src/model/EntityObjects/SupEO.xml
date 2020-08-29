@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SupEO"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="SUP"
+  AliasName="SupEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.EntityObjects.SupEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SupId"
+    IsNotNull="true"
+    ColumnName="SUP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="SUP"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="SupName"
+    Precision="20"
+    ColumnName="SUP_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContactPesonName"
+    Precision="14"
+    ColumnName="CONTACT_PESON_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Balance"
+    ColumnName="BALANCE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="SUP"/>
+  <AccessorAttribute
+    Name="SupInvoices"
+    Association="model.Associations.SupinvoicesSupAS"
+    AssociationEnd="model.Associations.SupinvoicesSupAS.SupInvoices"
+    AssociationOtherEnd="model.Associations.SupinvoicesSupAS.Sup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupMails"
+    Association="model.Associations.SupmailsSupAS"
+    AssociationEnd="model.Associations.SupmailsSupAS.SupMails"
+    AssociationOtherEnd="model.Associations.SupmailsSupAS.Sup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupPayments"
+    Association="model.Associations.SuppaymentsSupAS"
+    AssociationEnd="model.Associations.SuppaymentsSupAS.SupPayments"
+    AssociationOtherEnd="model.Associations.SuppaymentsSupAS.Sup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupPhones"
+    Association="model.Associations.SupphonesSupAS"
+    AssociationEnd="model.Associations.SupphonesSupAS.SupPhones"
+    AssociationOtherEnd="model.Associations.SupphonesSupAS.Sup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SupProd"
+    Association="model.Associations.SupprodSupAS"
+    AssociationEnd="model.Associations.SupprodSupAS.SupProd"
+    AssociationOtherEnd="model.Associations.SupprodSupAS.Sup"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SupPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUP_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EntityObjects.SupEO.SupId"/>
+    </AttrArray>
+  </Key>
+</Entity>

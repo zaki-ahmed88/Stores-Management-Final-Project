@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProdCatVO"
+  Version="11.1.2.64.36"
+  SelectList="ProdCatEO.PROD_CAT_ID, 
+       ProdCatEO.PROD_CAT_NAME"
+  FromList="PROD_CAT ProdCatEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ProdCatEO"
+    Entity="model.EntityObjects.ProdCatEO"/>
+  <ViewAttribute
+    Name="ProdCatId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProdCatId"
+    EntityUsage="ProdCatEO"
+    AliasName="PROD_CAT_ID"/>
+  <ViewAttribute
+    Name="ProdCatName"
+    PrecisionRule="true"
+    EntityAttrName="ProdCatName"
+    EntityUsage="ProdCatEO"
+    AliasName="PROD_CAT_NAME"/>
+  <ViewLinkAccessor
+    Name="Prod"
+    ViewLink="model.ViewLinks.ProdProdcatVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

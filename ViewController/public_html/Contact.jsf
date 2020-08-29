@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Contact.jsf" id="d1" binding="#{backingBeanScope.backing_Contact.d1}">
+        <af:form id="f1" binding="#{backingBeanScope.backing_Contact.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1" binding="#{backingBeanScope.backing_Contact.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_Contact.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_Contact.pgl1}">
+                                <af:commandButton text="Home" id="cb1"
+                                                  binding="#{backingBeanScope.backing_Contact.cb1}" action="home"/>
+                                <af:commandButton text="About" id="cb2"
+                                                  binding="#{backingBeanScope.backing_Contact.cb2}" action="about"/>
+                                <af:commandButton text="Contact" id="cb3"
+                                                  binding="#{backingBeanScope.backing_Contact.cb3}" action="contact"/>
+                                <af:commandButton text="Login" id="cb4"
+                                                  binding="#{backingBeanScope.backing_Contact.cb4}" action="login"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:outputText value="Contact Page" id="ot1" binding="#{backingBeanScope.backing_Contact.ot1}"
+                                           inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Contact-->
+</f:view>

@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ProductCategories.jsf" id="d1" binding="#{backingBeanScope.backing_ProductCategories.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_ProductCategories.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_ProductCategories.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1"
+                             binding="#{backingBeanScope.backing_ProductCategories.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_ProductCategories.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_ProductCategories.pgl1}">
+                                <af:commandButton text="Admin" id="cb1"
+                                                  binding="#{backingBeanScope.backing_ProductCategories.cb1}"
+                                                  action="admin"/>
+                                <af:commandButton text="Suppliers" id="cb2"
+                                                  binding="#{backingBeanScope.backing_ProductCategories.cb2}"
+                                                  action="suppliers"/>
+                                <af:commandButton text="Product Categories" id="cb3"
+                                                  binding="#{backingBeanScope.backing_ProductCategories.cb3}"
+                                                  action="productCategories"/>
+                                <af:commandButton text="Products" id="cb4"
+                                                  binding="#{backingBeanScope.backing_ProductCategories.cb4}"
+                                                  action="products"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelGroupLayout layout="scroll" id="pgl2"
+                                                 binding="#{backingBeanScope.backing_ProductCategories.pgl2}">
+                                <af:outputText value="Product Categories Page" id="ot1"
+                                               binding="#{backingBeanScope.backing_ProductCategories.ot1}"
+                                               inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                                <af:spacer width="10" height="20" id="s3"
+                                           binding="#{backingBeanScope.backing_ProductCategories.s3}"/>
+                                <af:panelGroupLayout id="pgl4"
+                                                     binding="#{backingBeanScope.backing_ProductCategories.pgl4}"
+                                                     layout="horizontal">
+                                    <af:table value="#{bindings.ProdCat1.collectionModel}" var="row"
+                                              rows="#{bindings.ProdCat1.rangeSize}"
+                                              emptyText="#{bindings.ProdCat1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.ProdCat1.rangeSize}" rowBandingInterval="0"
+                                              filterModel="#{bindings.ProdCat1Query.queryDescriptor}"
+                                              queryListener="#{bindings.ProdCat1Query.processQuery}"
+                                              filterVisible="true" varStatus="vs"
+                                              selectedRowKeys="#{bindings.ProdCat1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.ProdCat1.collectionModel.makeCurrent}"
+                                              rowSelection="single" id="t1"
+                                              binding="#{backingBeanScope.backing_ProductCategories.t1}"
+                                              partialTriggers="::cb5 ::cb6 ::cb7 ::cb8 ::cb16 ::cb17"
+                                              inlineStyle="width:100%;">
+                                        <af:column sortProperty="#{bindings.ProdCat1.hints.ProdCatId.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProdCat1.hints.ProdCatId.label}" id="c1">
+                                            <af:outputText value="#{row.ProdCatId}"
+                                                           shortDesc="#{bindings.ProdCat1.hints.ProdCatId.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ProdCat1.hints.ProdCatName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProdCat1.hints.ProdCatName.label}" id="c2">
+                                            <af:outputText value="#{row.ProdCatName}"
+                                                           shortDesc="#{bindings.ProdCat1.hints.ProdCatName.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                    </af:table>
+                                    <af:spacer width="15" height="10" id="s2"
+                                               binding="#{backingBeanScope.backing_ProductCategories.s2}"/>
+                                    <af:panelFormLayout id="pfl1"
+                                                        binding="#{backingBeanScope.backing_ProductCategories.pfl1}"
+                                                        inlineStyle="width:100%;">
+                                        <af:inputText value="#{bindings.ProdCatId.inputValue}"
+                                                      label="#{bindings.ProdCatId.hints.label}"
+                                                      required="#{bindings.ProdCatId.hints.mandatory}"
+                                                      columns="#{bindings.ProdCatId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProdCatId.hints.precision}"
+                                                      shortDesc="#{bindings.ProdCatId.hints.tooltip}" id="it1"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it1}">
+                                            <f:validator binding="#{bindings.ProdCatId.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProdCatName.inputValue}"
+                                                      label="#{bindings.ProdCatName.hints.label}"
+                                                      required="#{bindings.ProdCatName.hints.mandatory}"
+                                                      columns="#{bindings.ProdCatName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProdCatName.hints.precision}"
+                                                      shortDesc="#{bindings.ProdCatName.hints.tooltip}" id="it2"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it2}">
+                                            <f:validator binding="#{bindings.ProdCatName.validator}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl3"
+                                                                 binding="#{backingBeanScope.backing_ProductCategories.pgl3}">
+                                                <f:facet name="separator">
+                                                    <af:spacer width="10" height="1" id="s1"
+                                                               binding="#{backingBeanScope.backing_ProductCategories.s1}"/>
+                                                </f:facet>
+                                                <af:commandButton actionListener="#{bindings.First.execute}"
+                                                                  text="First" disabled="#{!bindings.First.enabled}"
+                                                                  partialSubmit="true" id="cb5"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb5}"/>
+                                                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                                                  text="Previous"
+                                                                  disabled="#{!bindings.Previous.enabled}"
+                                                                  partialSubmit="true" id="cb6"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb6}"/>
+                                                <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                                  disabled="#{!bindings.Next.enabled}"
+                                                                  partialSubmit="true" id="cb7"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb7}"/>
+                                                <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                                  disabled="#{!bindings.Last.enabled}"
+                                                                  partialSubmit="true" id="cb8"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb8}"/>
+                                                <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                                                                  text="CreateInsert1"
+                                                                  disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                  id="cb16"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb16}"/>
+                                                <af:commandButton actionListener="#{bindings.Delete1.execute}"
+                                                                  text="Delete1" disabled="#{!bindings.Delete1.enabled}"
+                                                                  id="cb17"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb17}"/>
+                                                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                                                  text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb18"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb18}"/>
+                                                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                                                  text="Rollback"
+                                                                  disabled="#{!bindings.Rollback.enabled}"
+                                                                  immediate="true" id="cb19"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb19}">
+                                                    <af:resetActionListener/>
+                                                </af:commandButton>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                                <af:spacer width="10" height="20" id="s4"
+                                           binding="#{backingBeanScope.backing_ProductCategories.s4}"/>
+                                <af:panelGroupLayout id="pgl6"
+                                                     binding="#{backingBeanScope.backing_ProductCategories.pgl6}"
+                                                     layout="horizontal">
+                                    <af:table value="#{bindings.Prod1.collectionModel}" var="row"
+                                              rows="#{bindings.Prod1.rangeSize}"
+                                              emptyText="#{bindings.Prod1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.Prod1.rangeSize}" rowBandingInterval="0"
+                                              filterModel="#{bindings.Prod1Query.queryDescriptor}"
+                                              queryListener="#{bindings.Prod1Query.processQuery}" filterVisible="true"
+                                              varStatus="vs"
+                                              selectedRowKeys="#{bindings.Prod1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.Prod1.collectionModel.makeCurrent}"
+                                              rowSelection="single" id="t2"
+                                              binding="#{backingBeanScope.backing_ProductCategories.t2}"
+                                              partialTriggers="::cb9 ::cb10 ::cb11 ::cb12 ::cb13 ::cb14"
+                                              inlineStyle="width:100%;">
+                                        <af:column sortProperty="#{bindings.Prod1.hints.ProdId.name}" filterable="true"
+                                                   sortable="true" headerText="#{bindings.Prod1.hints.ProdId.label}"
+                                                   id="c3">
+                                            <af:outputText value="#{row.ProdId}"
+                                                           shortDesc="#{bindings.Prod1.hints.ProdId.tooltip}" id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Prod1.hints.ProdName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.Prod1.hints.ProdName.label}" id="c4">
+                                            <af:outputText value="#{row.ProdName}"
+                                                           shortDesc="#{bindings.Prod1.hints.ProdName.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Prod1.hints.Quantity.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.Prod1.hints.Quantity.label}" id="c5">
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.Prod1.hints.Quantity.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Prod1.hints.ProdCatId.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.Prod1.hints.ProdCatId.label}" id="c6">
+                                            <af:outputText value="#{row.ProdCatId}"
+                                                           shortDesc="#{bindings.Prod1.hints.ProdCatId.tooltip}"
+                                                           id="ot7"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Prod1.hints.Price.name}" filterable="true"
+                                                   sortable="true" headerText="#{bindings.Prod1.hints.Price.label}"
+                                                   id="c7">
+                                            <af:outputText value="#{row.Price}"
+                                                           shortDesc="#{bindings.Prod1.hints.Price.tooltip}" id="ot8"/>
+                                        </af:column>
+                                    </af:table>
+                                    <af:spacer width="15" height="10" id="s6"
+                                               binding="#{backingBeanScope.backing_ProductCategories.s6}"/>
+                                    <af:panelFormLayout id="pfl2"
+                                                        binding="#{backingBeanScope.backing_ProductCategories.pfl2}"
+                                                        inlineStyle="width:100%;">
+                                        <af:inputText value="#{bindings.ProdId.inputValue}"
+                                                      label="#{bindings.ProdId.hints.label}"
+                                                      required="#{bindings.ProdId.hints.mandatory}"
+                                                      columns="#{bindings.ProdId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProdId.hints.precision}"
+                                                      shortDesc="#{bindings.ProdId.hints.tooltip}" id="it3"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it3}">
+                                            <f:validator binding="#{bindings.ProdId.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProdName.inputValue}"
+                                                      label="#{bindings.ProdName.hints.label}"
+                                                      required="#{bindings.ProdName.hints.mandatory}"
+                                                      columns="#{bindings.ProdName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProdName.hints.precision}"
+                                                      shortDesc="#{bindings.ProdName.hints.tooltip}" id="it4"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it4}">
+                                            <f:validator binding="#{bindings.ProdName.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Quantity.inputValue}"
+                                                      label="#{bindings.Quantity.hints.label}"
+                                                      required="#{bindings.Quantity.hints.mandatory}"
+                                                      columns="#{bindings.Quantity.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Quantity.hints.precision}"
+                                                      shortDesc="#{bindings.Quantity.hints.tooltip}" id="it5"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it5}">
+                                            <f:validator binding="#{bindings.Quantity.validator}"/>
+                                        </af:inputText>
+                                        <af:inputComboboxListOfValues id="prodCatId1Id"
+                                                                      popupTitle="Search and Select: #{bindings.ProdCatId1.hints.label}"
+                                                                      value="#{bindings.ProdCatId1.inputValue}"
+                                                                      label="#{bindings.ProdCatId1.hints.label}"
+                                                                      model="#{bindings.ProdCatId1.listOfValuesModel}"
+                                                                      required="#{bindings.ProdCatId1.hints.mandatory}"
+                                                                      columns="#{bindings.ProdCatId1.hints.displayWidth}"
+                                                                      shortDesc="#{bindings.ProdCatId1.hints.tooltip}"
+                                                                      binding="#{backingBeanScope.backing_ProductCategories.prodCatId1Id}">
+                                            <f:validator binding="#{bindings.ProdCatId1.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.ProdCatId1.format}"/>
+                                        </af:inputComboboxListOfValues>
+                                        <af:inputText value="#{bindings.Price.inputValue}"
+                                                      label="#{bindings.Price.hints.label}"
+                                                      required="#{bindings.Price.hints.mandatory}"
+                                                      columns="#{bindings.Price.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Price.hints.precision}"
+                                                      shortDesc="#{bindings.Price.hints.tooltip}" id="it6"
+                                                      binding="#{backingBeanScope.backing_ProductCategories.it6}">
+                                            <f:validator binding="#{bindings.Price.validator}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl5"
+                                                                 binding="#{backingBeanScope.backing_ProductCategories.pgl5}">
+                                                <f:facet name="separator">
+                                                    <af:spacer width="10" height="1" id="s5"
+                                                               binding="#{backingBeanScope.backing_ProductCategories.s5}"/>
+                                                </f:facet>
+                                                <af:commandButton actionListener="#{bindings.First1.execute}"
+                                                                  text="First1" disabled="#{!bindings.First1.enabled}"
+                                                                  partialSubmit="true" id="cb9"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb9}"/>
+                                                <af:commandButton actionListener="#{bindings.Previous1.execute}"
+                                                                  text="Previous1"
+                                                                  disabled="#{!bindings.Previous1.enabled}"
+                                                                  partialSubmit="true" id="cb10"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb10}"/>
+                                                <af:commandButton actionListener="#{bindings.Next1.execute}"
+                                                                  text="Next1" disabled="#{!bindings.Next1.enabled}"
+                                                                  partialSubmit="true" id="cb11"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb11}"/>
+                                                <af:commandButton actionListener="#{bindings.Last1.execute}"
+                                                                  text="Last1" disabled="#{!bindings.Last1.enabled}"
+                                                                  partialSubmit="true" id="cb12"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb12}"/>
+                                                <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                                                  text="CreateInsert"
+                                                                  disabled="#{!bindings.CreateInsert.enabled}"
+                                                                  id="cb13"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb13}"/>
+                                                <af:commandButton actionListener="#{bindings.Delete.execute}"
+                                                                  text="Delete" disabled="#{!bindings.Delete.enabled}"
+                                                                  id="cb14"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb14}"/>
+                                                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                                                  text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb15"
+                                                                  binding="#{backingBeanScope.backing_ProductCategories.cb15}"/>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_ProductCategories-->
+</f:view>

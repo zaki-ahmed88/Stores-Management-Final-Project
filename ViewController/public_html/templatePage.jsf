@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="pt_psl1" startWidth="228px" topHeight="146px" bottomHeight="235px">
+    <f:facet name="bottom">
+      <af:image source="images/footer.jpg" id="pt_i1"/>
+    </f:facet>
+    <f:facet name="center">
+      <af:facetRef facetName="pageContents"/>
+    </f:facet>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top">
+      <af:image source="images/banner.jpg" id="pt_i2"/>
+    </f:facet>
+  </af:panelStretchLayout>
+  <af:xmlContent>
+    <afc:component>
+      <afc:display-name>templatePage</afc:display-name>
+      <afc:facet>
+        <afc:facet-name>pageContents</afc:facet-name>
+      </afc:facet>
+    </afc:component>
+  </af:xmlContent>
+</af:pageTemplateDef>

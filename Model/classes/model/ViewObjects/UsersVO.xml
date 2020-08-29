@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UsersVO"
+  Version="11.1.2.64.36"
+  SelectList="UsersEO.USER_ID, 
+       UsersEO.FIRST_NAME, 
+       UsersEO.LAST_NAME, 
+       UsersEO.EMAIL, 
+       UsersEO.PASSWORD, 
+       UsersEO.USER_ROLE"
+  FromList="USERS UsersEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="UsersEO"
+    Entity="model.EntityObjects.UsersEO"/>
+  <ViewAttribute
+    Name="UserId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserId"
+    EntityUsage="UsersEO"
+    AliasName="USER_ID"/>
+  <ViewAttribute
+    Name="FirstName"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="UsersEO"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="UsersEO"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="UsersEO"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="Password"
+    PrecisionRule="true"
+    EntityAttrName="Password"
+    EntityUsage="UsersEO"
+    AliasName="PASSWORD"/>
+  <ViewAttribute
+    Name="UserRole"
+    PrecisionRule="true"
+    EntityAttrName="UserRole"
+    EntityUsage="UsersEO"
+    AliasName="USER_ROLE"/>
+</ViewObject>

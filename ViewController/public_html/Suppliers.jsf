@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Suppliers.jsf" id="d1" binding="#{backingBeanScope.backing_Suppliers.d1}">
+        <af:messages id="m1" binding="#{backingBeanScope.backing_Suppliers.m1}"/>
+        <af:form id="f1" binding="#{backingBeanScope.backing_Suppliers.f1}">
+            <af:pageTemplate viewId="/templatePage.jsf" id="pt1" binding="#{backingBeanScope.backing_Suppliers.pt1}">
+                <f:facet name="pageContents">
+                    <af:panelSplitter id="ps1" binding="#{backingBeanScope.backing_Suppliers.ps1}">
+                        <f:facet name="first">
+                            <af:panelGroupLayout layout="scroll" id="pgl1"
+                                                 binding="#{backingBeanScope.backing_Suppliers.pgl1}">
+                                <af:commandButton text="Admin" id="cb1"
+                                                  binding="#{backingBeanScope.backing_Suppliers.cb1}" action="admin"/>
+                                <af:commandButton text="Suppliers" id="cb2"
+                                                  binding="#{backingBeanScope.backing_Suppliers.cb2}"
+                                                  action="suppliers"/>
+                                <af:commandButton text="Product Categories" id="cb3"
+                                                  binding="#{backingBeanScope.backing_Suppliers.cb3}"
+                                                  action="productCategories"/>
+                                <af:commandButton text="Products" id="cb4"
+                                                  binding="#{backingBeanScope.backing_Suppliers.cb4}"
+                                                  action="products"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelGroupLayout layout="scroll" id="pgl2"
+                                                 binding="#{backingBeanScope.backing_Suppliers.pgl2}">
+                                <af:outputText value="Suppliers Page" id="ot1"
+                                               binding="#{backingBeanScope.backing_Suppliers.ot1}"
+                                               inlineStyle="color:rgb(0,0,132); font-size:20px;"/>
+                                <af:spacer width="10" height="20" id="s3"
+                                           binding="#{backingBeanScope.backing_Suppliers.s3}"/>
+                                <af:panelGroupLayout id="pgl4" binding="#{backingBeanScope.backing_Suppliers.pgl4}"
+                                                     layout="horizontal">
+                                    <af:table value="#{bindings.Sup1.collectionModel}" var="row"
+                                              rows="#{bindings.Sup1.rangeSize}"
+                                              emptyText="#{bindings.Sup1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.Sup1.rangeSize}" rowBandingInterval="0"
+                                              filterModel="#{bindings.Sup1Query.queryDescriptor}"
+                                              queryListener="#{bindings.Sup1Query.processQuery}" filterVisible="true"
+                                              varStatus="vs"
+                                              selectedRowKeys="#{bindings.Sup1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.Sup1.collectionModel.makeCurrent}"
+                                              rowSelection="single" id="t1"
+                                              binding="#{backingBeanScope.backing_Suppliers.t1}"
+                                              partialTriggers="::cb5 ::cb6 ::cb7 ::cb8 ::cb13 ::cb14"
+                                              inlineStyle="width:100%;">
+                                        <af:column sortProperty="#{bindings.Sup1.hints.SupId.name}" filterable="true"
+                                                   sortable="true" headerText="#{bindings.Sup1.hints.SupId.label}"
+                                                   id="c1">
+                                            <af:outputText value="#{row.SupId}"
+                                                           shortDesc="#{bindings.Sup1.hints.SupId.tooltip}" id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Sup1.hints.SupName.name}" filterable="true"
+                                                   sortable="true" headerText="#{bindings.Sup1.hints.SupName.label}"
+                                                   id="c2">
+                                            <af:outputText value="#{row.SupName}"
+                                                           shortDesc="#{bindings.Sup1.hints.SupName.tooltip}" id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Sup1.hints.ContactPesonName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.Sup1.hints.ContactPesonName.label}" id="c3">
+                                            <af:outputText value="#{row.ContactPesonName}"
+                                                           shortDesc="#{bindings.Sup1.hints.ContactPesonName.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.Sup1.hints.Balance.name}" filterable="true"
+                                                   sortable="true" headerText="#{bindings.Sup1.hints.Balance.label}"
+                                                   id="c4">
+                                            <af:outputText value="#{row.Balance}"
+                                                           shortDesc="#{bindings.Sup1.hints.Balance.tooltip}" id="ot5"/>
+                                        </af:column>
+                                    </af:table>
+                                    <af:spacer width="15" height="10" id="s2"
+                                               binding="#{backingBeanScope.backing_Suppliers.s2}"/>
+                                    <af:panelFormLayout id="pfl1" binding="#{backingBeanScope.backing_Suppliers.pfl1}"
+                                                        inlineStyle="width:100%;">
+                                        <af:inputText value="#{bindings.SupId.inputValue}"
+                                                      label="#{bindings.SupId.hints.label}"
+                                                      required="#{bindings.SupId.hints.mandatory}"
+                                                      columns="#{bindings.SupId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.SupId.hints.precision}"
+                                                      shortDesc="#{bindings.SupId.hints.tooltip}" id="it1"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it1}">
+                                            <f:validator binding="#{bindings.SupId.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.SupName.inputValue}"
+                                                      label="#{bindings.SupName.hints.label}"
+                                                      required="#{bindings.SupName.hints.mandatory}"
+                                                      columns="#{bindings.SupName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.SupName.hints.precision}"
+                                                      shortDesc="#{bindings.SupName.hints.tooltip}" id="it2"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it2}">
+                                            <f:validator binding="#{bindings.SupName.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ContactPesonName.inputValue}"
+                                                      label="#{bindings.ContactPesonName.hints.label}"
+                                                      required="#{bindings.ContactPesonName.hints.mandatory}"
+                                                      columns="#{bindings.ContactPesonName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ContactPesonName.hints.precision}"
+                                                      shortDesc="#{bindings.ContactPesonName.hints.tooltip}" id="it3"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it3}">
+                                            <f:validator binding="#{bindings.ContactPesonName.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.Balance.inputValue}"
+                                                      label="#{bindings.Balance.hints.label}"
+                                                      required="#{bindings.Balance.hints.mandatory}"
+                                                      columns="#{bindings.Balance.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Balance.hints.precision}"
+                                                      shortDesc="#{bindings.Balance.hints.tooltip}" id="it4"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it4}">
+                                            <f:validator binding="#{bindings.Balance.validator}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl3"
+                                                                 binding="#{backingBeanScope.backing_Suppliers.pgl3}">
+                                                <f:facet name="separator">
+                                                    <af:group id="g1"
+                                                              binding="#{backingBeanScope.backing_Suppliers.g1}">
+                                                        <af:spacer width="10" height="1" id="s1"
+                                                                   binding="#{backingBeanScope.backing_Suppliers.s1}"/>
+                                                    </af:group>
+                                                </f:facet>
+                                                <af:commandButton actionListener="#{bindings.First.execute}"
+                                                                  text="First" disabled="#{!bindings.First.enabled}"
+                                                                  partialSubmit="true" id="cb5"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb5}"/>
+                                                <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                                                  text="Previous"
+                                                                  disabled="#{!bindings.Previous.enabled}"
+                                                                  partialSubmit="true" id="cb6"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb6}"/>
+                                                <af:commandButton actionListener="#{bindings.Next.execute}" text="Next"
+                                                                  disabled="#{!bindings.Next.enabled}"
+                                                                  partialSubmit="true" id="cb7"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb7}"/>
+                                                <af:commandButton actionListener="#{bindings.Last.execute}" text="Last"
+                                                                  disabled="#{!bindings.Last.enabled}"
+                                                                  partialSubmit="true" id="cb8"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb8}"/>
+                                                <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                                                                  text="CreateInsert"
+                                                                  disabled="#{!bindings.CreateInsert.enabled}"
+                                                                  id="cb13"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb13}"/>
+                                                <af:commandButton actionListener="#{bindings.Delete.execute}"
+                                                                  text="Delete" disabled="#{!bindings.Delete.enabled}"
+                                                                  id="cb14"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb14}"/>
+                                                <af:commandButton actionListener="#{bindings.Commit.execute}"
+                                                                  text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb15"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb15}"/>
+                                                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                                                  text="Rollback"
+                                                                  disabled="#{!bindings.Rollback.enabled}"
+                                                                  immediate="true" id="cb16"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb16}">
+                                                    <af:resetActionListener/>
+                                                </af:commandButton>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                                <af:spacer width="10" height="20" id="s6"
+                                           binding="#{backingBeanScope.backing_Suppliers.s6}"/>
+                                <af:panelGroupLayout id="pgl6" binding="#{backingBeanScope.backing_Suppliers.pgl6}"
+                                                     layout="horizontal">
+                                    <af:table value="#{bindings.SupInvoices1.collectionModel}" var="row"
+                                              rows="#{bindings.SupInvoices1.rangeSize}"
+                                              emptyText="#{bindings.SupInvoices1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              fetchSize="#{bindings.SupInvoices1.rangeSize}" rowBandingInterval="0"
+                                              filterModel="#{bindings.SupInvoices1Query.queryDescriptor}"
+                                              queryListener="#{bindings.SupInvoices1Query.processQuery}"
+                                              filterVisible="true" varStatus="vs"
+                                              selectedRowKeys="#{bindings.SupInvoices1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.SupInvoices1.collectionModel.makeCurrent}"
+                                              rowSelection="single" id="t2"
+                                              binding="#{backingBeanScope.backing_Suppliers.t2}"
+                                              partialTriggers="::cb9 ::cb10 ::cb11 ::cb12 ::cb17 ::cb18"
+                                              inlineStyle="width:100%;">
+                                        <af:column sortProperty="#{bindings.SupInvoices1.hints.SupInvoicesId.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.SupInvoices1.hints.SupInvoicesId.label}"
+                                                   id="c5">
+                                            <af:outputText value="#{row.SupInvoicesId}"
+                                                           shortDesc="#{bindings.SupInvoices1.hints.SupInvoicesId.tooltip}"
+                                                           id="ot6"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.SupInvoices1.hints.SupInvoicesDate.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.SupInvoices1.hints.SupInvoicesDate.label}"
+                                                   id="c6">
+                                            <f:facet name="filter">
+                                                <af:inputDate value="#{vs.filterCriteria.SupInvoicesDate}" id="id1"
+                                                              binding="#{backingBeanScope.backing_Suppliers.id1}">
+                                                    <af:convertDateTime pattern="#{bindings.SupInvoices1.hints.SupInvoicesDate.format}"/>
+                                                </af:inputDate>
+                                            </f:facet>
+                                            <af:outputText value="#{row.SupInvoicesDate}"
+                                                           shortDesc="#{bindings.SupInvoices1.hints.SupInvoicesDate.tooltip}"
+                                                           id="ot7">
+                                                <af:convertDateTime pattern="#{bindings.SupInvoices1.hints.SupInvoicesDate.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.SupInvoices1.hints.SupInvoicesMount.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.SupInvoices1.hints.SupInvoicesMount.label}"
+                                                   id="c7">
+                                            <af:outputText value="#{row.SupInvoicesMount}"
+                                                           shortDesc="#{bindings.SupInvoices1.hints.SupInvoicesMount.tooltip}"
+                                                           id="ot8"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.SupInvoices1.hints.SupId.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.SupInvoices1.hints.SupId.label}" id="c8">
+                                            <af:outputText value="#{row.SupId}"
+                                                           shortDesc="#{bindings.SupInvoices1.hints.SupId.tooltip}"
+                                                           id="ot9"/>
+                                        </af:column>
+                                    </af:table>
+                                    <af:spacer width="15" height="10" id="s5"
+                                               binding="#{backingBeanScope.backing_Suppliers.s5}"/>
+                                    <af:panelFormLayout id="pfl2" binding="#{backingBeanScope.backing_Suppliers.pfl2}"
+                                                        inlineStyle="width:100%;">
+                                        <af:inputText value="#{bindings.SupInvoicesId.inputValue}"
+                                                      label="#{bindings.SupInvoicesId.hints.label}"
+                                                      required="#{bindings.SupInvoicesId.hints.mandatory}"
+                                                      columns="#{bindings.SupInvoicesId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.SupInvoicesId.hints.precision}"
+                                                      shortDesc="#{bindings.SupInvoicesId.hints.tooltip}" id="it5"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it5}">
+                                            <f:validator binding="#{bindings.SupInvoicesId.validator}"/>
+                                        </af:inputText>
+                                        <af:inputDate value="#{bindings.SupInvoicesDate.inputValue}"
+                                                      label="#{bindings.SupInvoicesDate.hints.label}"
+                                                      required="#{bindings.SupInvoicesDate.hints.mandatory}"
+                                                      columns="#{bindings.SupInvoicesDate.hints.displayWidth}"
+                                                      shortDesc="#{bindings.SupInvoicesDate.hints.tooltip}" id="id2"
+                                                      binding="#{backingBeanScope.backing_Suppliers.id2}">
+                                            <f:validator binding="#{bindings.SupInvoicesDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.SupInvoicesDate.format}"/>
+                                        </af:inputDate>
+                                        <af:inputText value="#{bindings.SupInvoicesMount.inputValue}"
+                                                      label="#{bindings.SupInvoicesMount.hints.label}"
+                                                      required="#{bindings.SupInvoicesMount.hints.mandatory}"
+                                                      columns="#{bindings.SupInvoicesMount.hints.displayWidth}"
+                                                      maximumLength="#{bindings.SupInvoicesMount.hints.precision}"
+                                                      shortDesc="#{bindings.SupInvoicesMount.hints.tooltip}" id="it6"
+                                                      binding="#{backingBeanScope.backing_Suppliers.it6}">
+                                            <f:validator binding="#{bindings.SupInvoicesMount.validator}"/>
+                                        </af:inputText>
+                                        <af:inputComboboxListOfValues id="supId1Id"
+                                                                      popupTitle="Search and Select: #{bindings.SupId1.hints.label}"
+                                                                      value="#{bindings.SupId1.inputValue}"
+                                                                      label="#{bindings.SupId1.hints.label}"
+                                                                      model="#{bindings.SupId1.listOfValuesModel}"
+                                                                      required="#{bindings.SupId1.hints.mandatory}"
+                                                                      columns="#{bindings.SupId1.hints.displayWidth}"
+                                                                      shortDesc="#{bindings.SupId1.hints.tooltip}"
+                                                                      binding="#{backingBeanScope.backing_Suppliers.supId1Id}">
+                                            <f:validator binding="#{bindings.SupId1.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.SupId1.format}"/>
+                                        </af:inputComboboxListOfValues>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl5"
+                                                                 binding="#{backingBeanScope.backing_Suppliers.pgl5}">
+                                                <f:facet name="separator">
+                                                    <af:spacer width="10" height="1" id="s4"
+                                                               binding="#{backingBeanScope.backing_Suppliers.s4}"/>
+                                                </f:facet>
+                                                <af:commandButton actionListener="#{bindings.First1.execute}"
+                                                                  text="First1" disabled="#{!bindings.First1.enabled}"
+                                                                  partialSubmit="true" id="cb9"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb9}"/>
+                                                <af:commandButton actionListener="#{bindings.Previous1.execute}"
+                                                                  text="Previous1"
+                                                                  disabled="#{!bindings.Previous1.enabled}"
+                                                                  partialSubmit="true" id="cb10"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb10}"/>
+                                                <af:commandButton actionListener="#{bindings.Next1.execute}"
+                                                                  text="Next1" disabled="#{!bindings.Next1.enabled}"
+                                                                  partialSubmit="true" id="cb11"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb11}"/>
+                                                <af:commandButton actionListener="#{bindings.Last1.execute}"
+                                                                  text="Last1" disabled="#{!bindings.Last1.enabled}"
+                                                                  partialSubmit="true" id="cb12"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb12}"/>
+                                                <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                                                                  text="CreateInsert1"
+                                                                  disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                  id="cb17"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb17}"/>
+                                                <af:commandButton actionListener="#{bindings.Delete1.execute}"
+                                                                  text="Delete1" disabled="#{!bindings.Delete1.enabled}"
+                                                                  id="cb18"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb18}"/>
+                                                <af:commandButton
+                                                                  text="Commit" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="cb19"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb19}"
+                                                                  action="#{backingBeanScope.backing_Suppliers.Commit}"/>
+                                                <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                                                                  text="Rollback"
+                                                                  disabled="#{!bindings.Rollback.enabled}"
+                                                                  immediate="true" id="cb20"
+                                                                  binding="#{backingBeanScope.backing_Suppliers.cb20}">
+                                                    <af:resetActionListener/>
+                                                </af:commandButton>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+    <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_Suppliers-->
+</f:view>

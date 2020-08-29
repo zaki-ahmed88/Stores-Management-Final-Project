@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__10">/WEB-INF/mainT.F.xml</metadata-resource>
+  <managed-bean id="__1">
+    <managed-bean-name>backing_admin</managed-bean-name>
+    <managed-bean-class>view.backing.Admin</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1admin.jsf-->
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>backing_home</managed-bean-name>
+    <managed-bean-class>view.backing.Home</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1home.jsf-->
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>backing_About</managed-bean-name>
+    <managed-bean-class>view.backing.About</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1About.jsf-->
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>backing_Contact</managed-bean-name>
+    <managed-bean-class>view.backing.Contact</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Contact.jsf-->
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>backing_login</managed-bean-name>
+    <managed-bean-class>view.backing.Login</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1login.jsf-->
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>backing_Customers</managed-bean-name>
+    <managed-bean-class>view.backing.Customers</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Customers.jsf-->
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>backing_Suppliers</managed-bean-name>
+    <managed-bean-class>view.backing.Suppliers</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Suppliers.jsf-->
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>backing_Products</managed-bean-name>
+    <managed-bean-class>view.backing.Products</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Products.jsf-->
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name>backing_ProductCategories</managed-bean-name>
+    <managed-bean-class>view.backing.ProductCategories</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1ProductCategories.jsf-->
+  </managed-bean>
+</adfc-config>
